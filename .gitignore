@@ -1,0 +1,14 @@
+# каталог зависимостей
+node_modules
+
+# каталог продакшена
+dist
+
+# другое
+.env.local
+.env.development.local
+.env.production.local
+
+.DS_Store
+npm-debug.log*
+
