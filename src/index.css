@@ -1,6 +1,8 @@
+@import "~normalize.css";
 @import "./styles/fonts.css";
 
 body {
-    font-family: Inter;
-    color: blue;
+    font-family: Inter; 
+    box-sizing: border-box;
+    background-color: darkcyan;  
 }
