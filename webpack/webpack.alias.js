@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = () => {
     return {
@@ -6,9 +6,9 @@ module.exports = () => {
             alias: {
                 '@components': path.resolve(__dirname, '../src/components'),
                 '@images': path.resolve(__dirname, '../src/assets/images'),
-                '@fonts': path.resolve(__dirname, '../src/assets/fonts')
+                '@fonts': path.resolve(__dirname, '../src/assets/fonts'),
                 
-            }
+            },
         },
-    }
-}
+    };
+};

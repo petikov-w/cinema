@@ -9,16 +9,16 @@ module.exports = () => {
                     test: /\.css$/,
                     // exclude: /node_modules/,
                     use: [
-                        (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
+                        (mode === 'development') ? 'style-loader' : MiniCssExtractPlugin.loader,
                         {
                             loader: 'css-loader',
                             options: {
                                 modules: true,
-                            }
+                            },
                         },
-                    ]
+                    ],
                 },
-            ]
-        }
-    }
-}
+            ],
+        },
+    };
+};

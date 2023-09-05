@@ -1,5 +1,5 @@
-const TerserPlugin = require("terser-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = () => {
         return {
@@ -14,8 +14,8 @@ module.exports = () => {
                 new CssMinimizerPlugin(),
               ],
               },
-        }
-}
+        };
+};
 
 
     

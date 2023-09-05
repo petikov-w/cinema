@@ -8,18 +8,18 @@ module.exports = () => {
                             test: /\.(js|jsx)$/,
                             exclude: /node_modules/,
                             use: {
-                                loader: "babel-loader",
+                                loader: 'babel-loader',
                                 options: {
                                     presets: [
                                         ['@babel/preset-env'],
-                                        ['@babel/preset-react']
+                                        ['@babel/preset-react'],
                                     ],
                                     plugins: ['@babel/plugin-transform-class-properties',
-                                              '@babel/plugin-transform-object-rest-spread']
+                                              '@babel/plugin-transform-object-rest-spread'],
                                 },
-                            }
+                            },
                         },
-                    ]
-}
-    }
-}
+                    ],
+},
+    };
+};
