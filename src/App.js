@@ -1,19 +1,35 @@
 import React from 'react';
+import {
+    Route, RouterProvider, createBrowserRouter,
+    createRoutesFromElements,
+} from 'react-router-dom';
+
+import { SinglePage } from './pages/SinglePage';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { Layout } from './components/layout/Layout';
+import { PremierPage } from './pages/PremierPage';
+import { SerialPage } from './pages/SerialPage';
+import { MultPage } from './pages/MultPage';
+import { TopPage } from './pages/TopPage';
 
 export const App = () => {
-    
-const stl = {
-   color: 'white',
-   backgroundColor: 'green',
-};
+    const router = createBrowserRouter(createRoutesFromElements(
+        <Route path="/" element={<Layout />} >
+            <Route index element={<PremierPage />} />
+            <Route path="films" element={<TopPage />} />
+            <Route path="serials" element={<SerialPage />} />
+            <Route path="mults" element={<MultPage />} />
+            <Route path="films/:id" element={<SinglePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+        </Route>
+    ));
 
-return (
-    <>  
-        <div style={stl}>
-            <h1>Проект начат 04.09.2023 года</h1>
-        </div>
-        
-    </>
+    return (
+        <>
+            <RouterProvider router={router} />
+        </>
     );
 };
 
+
+//export default App;
