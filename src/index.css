@@ -1,6 +1,12 @@
 @import "~normalize.css";
 @import "./styles/fonts.css";
 
+:root {
+    --swiper-navigation-color: #ffa500;
+    --swiper-theme-color: #ffffff;
+}
+
+
 body {
     font-family: Inter;
     box-sizing: border-box;

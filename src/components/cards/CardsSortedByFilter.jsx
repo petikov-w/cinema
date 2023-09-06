@@ -1,16 +1,15 @@
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { register } from 'swiper/element/bundle';
 
-import 'swiper/css';
 import * as filter from '../filters/Filters';
 
 import { CardContent} from './CardContent';
 
 
 export const CardsSortedByFilter = (props) => {
-
+    register();
     const {filterInfo} = props;
     const films = useSelector(state=>state.listFilms.films); 
 
@@ -19,9 +18,9 @@ export const CardsSortedByFilter = (props) => {
     const filterFilm = (index, {...props}) => {
         return (
         <>
-            <SwiperSlide>
+            <swiper-slide>
                 <CardContent key={index} {...props} /> 
-            </SwiperSlide>            
+            </swiper-slide>            
         </>
         );       
     };   
@@ -39,9 +38,9 @@ export const CardsSortedByFilter = (props) => {
                             {filterInfo.title}</Typography>
                 </Grid>
                 <Grid item xs={8}>
-                    <Swiper  slidesPerView={4}>                   
+                    <swiper-container slides-per-view="4" speed="500"  navigation="true">            
                           { films1.map((film, index) => ( filterFilm(index, {...film})))}           
-                    </Swiper>   
+                    </swiper-container>   
                 </Grid>    
             </Grid>                   
         : filmsNotFound } 
