@@ -7,6 +7,13 @@
 }
 
 
+/* 
+swiper-container::part(button-next) {
+    color: red;
+    margin-right: -15px;
+    height: 22px;
+} */
+
 body {
     font-family: Inter;
     box-sizing: border-box;

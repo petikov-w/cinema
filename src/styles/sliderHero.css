@@ -1,0 +1,9 @@
+/* swiper-container::part(button-next) {
+    color: red;
+    margin-right: -15px;
+    height: 22px;
+} */
+
+.swiper-button-next {
+    color: green !important;
+}

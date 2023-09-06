@@ -4,7 +4,7 @@ export const Hero = styled.div`
                   position: relative;
                   top: 0;
                   left: 0;
-                  width: 100%;
+                  width: 93%;
                   height: 32rem;
                   overflow: hidden; 
                   transition: .3s;
@@ -12,7 +12,8 @@ export const Hero = styled.div`
                   z-index: 1;
                   /* background-color: #5e449f; */
                   border-radius: 10px;           
-                  margin: 1rem 0;      
+                  /* margin: 1rem 0;       */
+                  margin: 0 auto;      
                 `;
 
 export const HeroImage = styled.img`
