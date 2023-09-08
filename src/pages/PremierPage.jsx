@@ -6,13 +6,14 @@ import { Cards } from '../components/cards/Cards';
 
 export const PremierPage = () => { 
     const dispatch = useDispatch();
-    useEffect(()=>{ console.log('Открыл страницу примьер');
+    useEffect(()=>{
+        //  console.log('Открыл страницу примьер');
         dispatch({type:'FILMS_PREMIER'});}, []);
 
 
     useEffect(() => {
         return () => {
-            console.log('Покинул страницу примьер');
+            // console.log('Покинул страницу примьер');
         }; }, []);
 
     return (

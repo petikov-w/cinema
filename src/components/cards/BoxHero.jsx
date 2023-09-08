@@ -60,7 +60,7 @@ export const BoxHero = () => {
                                       ref={swiperRef} 
                                       init="false"   
                                       >
-                    { HeroList.map((item, index) => ( 
+                    { HeroList.map((item, index) => (
                           <swiper-slide>
                             <Hero>
                                 <HeroImage src={item.backgroundImage} />

@@ -20,7 +20,7 @@ export const FilterSerial = (props) => {
                          inputValue="" 
                          getOptionLabel= {(options) => options.genre}         
                          renderInput={(params)=><TextField {...params} label="Жанр" />}                  
-                         onChange={(event, value) => dispatch({type:'UPDATE_GENRE', payload: value},)}/>        
+                         onChange={(event, value) => dispatch({type:'UPDATE_GENRE', payload: value},)}/>;       
 
        const ListCountries = () => JSON.stringify(listCountries) === '{}' ? '' : 
        <Autocomplete sx={{ mb: 3 }} size="small" disableClearable={true}
@@ -28,7 +28,7 @@ export const FilterSerial = (props) => {
                          inputValue="" 
                          getOptionLabel= {(options) => options.country}
                          renderInput={(params)=><TextField {...params} label="Страна" />}
-                         onChange={(event, value) => dispatch({type:'UPDATE_COUNTRIE', payload: value},)}/>       
+                         onChange={(event, value) => dispatch({type:'UPDATE_COUNTRIE', payload: value},)}/>;       
 
        const ChipSelectedGenre = () =>  <Chip label={`Жанр: ${selectedGenre.genre}`} sx={{mb: 2 }}
                                               onDelete={() => dispatch({type:'DELETE_GENRE'})}/>;

@@ -35,6 +35,7 @@ export const Header = (props) => {
 
     useEffect(()=>{ checked ? dispatch({type:'UPDATE_THEME', payload:'dark' }) 
                             : dispatch({type:'UPDATE_THEME', payload: 'light'});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);      
     
  

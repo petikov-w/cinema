@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {Box,  Button, Typography, CardMedia, Stack} from '@mui/material';

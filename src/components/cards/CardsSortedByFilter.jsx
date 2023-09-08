@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Box } from '@mui/material';
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { register } from 'swiper/element/bundle';
@@ -29,7 +29,7 @@ export const CardsSortedByFilter = (props) => {
     const filmsNotFound = (<Typography sx={{ mt:3, ml:3, fontSize:24, fontWeight: 600 }}>
         Фильмы не найдены...</Typography>);
 
-// ========================================================================
+// ========================= Инициализация слайдера =====================================
 
         const swiperRef = useRef(null);
         useEffect(() => {
@@ -37,6 +37,17 @@ export const CardsSortedByFilter = (props) => {
             const params = {
             navigation: true,
             //   pagination: true,
+            breakpoints: {
+                400: {
+                  slidesPerView: 2,
+                  },
+                640: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 4,
+                },
+              },
             injectStyles: [                `
                 .swiper-button-next,
                 .swiper-button-prev {
@@ -62,26 +73,34 @@ export const CardsSortedByFilter = (props) => {
         }, []);
 
 // =========================================================================
-
+        const Boxz = (
+            <>        
+            <Box>
+                <Grid item xs={4}>
+                    <Typography sx={{ mt:3, ml:3, fontSize:24, fontWeight: 600 }}>
+                            {filterInfo.title}</Typography>
+                </Grid>
+            </Box>    
+            <Box>
+                 <Grid item xs={8}  direction="row" alignItems="center">
+                    <swiper-container speed="500"  ref={swiperRef} init="false">            
+                          { films1.map((film, index) => (filterFilm(index, {...film})))}           
+                    </swiper-container>   
+                </Grid> 
+            </Box>                   
+            </>
+        );
 
 
 
     return (
         <>
-          { films1.length !== 0  ?  
-            
-            <Grid container spacing={2}  sx={{mt: 3}} direction="row" alignItems="center" >               
-                <Grid item xs={3}>
-                    <Typography sx={{ mt:3, ml:3, fontSize:24, fontWeight: 600 }}>
-                            {filterInfo.title}</Typography>
-                </Grid>
-                <Grid item xs={8} direction="row" alignItems="center">
-                    <swiper-container slides-per-view="4" speed="500"  ref={swiperRef} init="false">            
-                          { films1.map((film, index) => ( filterFilm(index, {...film})))}           
-                    </swiper-container>   
-                </Grid>    
-            </Grid>                   
-        : filmsNotFound } 
+
+        {/* <Grid container spacing={1}  sx={{mt: 3}} direction={{xs: 'column', md: 'row'}} alignItems="center" > */}
+        <Grid container spacing={1}  sx={{mt: 3}} direction="row" alignItems="center" >
+          { films1.length !== 0  ?    Boxz  : filmsNotFound } 
+        </Grid>  
+
         </>
       );
 };
