@@ -26,6 +26,14 @@ export const HeroImage = styled.img`
                   transition: .3s;
                   z-index: 10;
                   border-radius: 10px;  
+                  @media (max-width: 768px) {
+                    width: 100%;
+                    height: 60%;
+                  }
+                  @media (max-width: 500px) {
+                    width: 100%;
+                    height: 40%;
+                  }
                 `;
 export const HeroImageTitle = styled.img`
                 position: absolute;
@@ -36,6 +44,16 @@ export const HeroImageTitle = styled.img`
                 z-index: 20;
                 outline: none;
                 background-color: transparent;
+                @media (max-width: 768px) {
+                    width: 40%;
+                    height: 15%;
+                    top: 25px;
+                    left: 25px
+                  }
+                  @media (max-width: 500px) {
+                    width: 30%;
+                    height: 10%;
+                  }  
                 `;
 
 export const HeroImageSubTitle = styled.p`
@@ -47,7 +65,19 @@ export const HeroImageSubTitle = styled.p`
                 font-size: 15px;
                 font-weight: 500;
                 line-height: 22px;
-                z-index: 20;                
+                z-index: 20;      
+                @media (max-width: 768px) {
+                    width: 40%;
+                    height: 15%;
+                    top: 105px;
+                    left: 25px
+                  }          
+                  @media (max-width: 500px) {
+                    width: 50%;
+                    height: 10%;
+                    top: 75px;
+                    font-size: 11px;
+                  }  
                 `;
 
 export const HeroButton = styled.div`
@@ -59,5 +89,13 @@ export const HeroButton = styled.div`
                 left: 3rem;                
                 color: #2e2626;
                 font-weight: 600;
-                z-index: 20;                
+                z-index: 20;     
+                @media (max-width: 768px) {                   
+                    top: 50%;
+                    left: 25px
+                  }          
+                  @media (max-width: 500px) {
+                    top:160px;
+                    font-size: 12px;
+                  }   
                 `;

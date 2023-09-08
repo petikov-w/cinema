@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Box } from '@mui/material';
+import { Grid, Typography, Stack } from '@mui/material';
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { register } from 'swiper/element/bundle';
@@ -75,19 +75,15 @@ export const CardsSortedByFilter = (props) => {
 // =========================================================================
         const Boxz = (
             <>        
-            <Box>
-                <Grid item xs={4}>
+            <Stack sx={{ width: '300px' }}>
                     <Typography sx={{ mt:3, ml:3, fontSize:24, fontWeight: 600 }}>
                             {filterInfo.title}</Typography>
-                </Grid>
-            </Box>    
-            <Box>
-                 <Grid item xs={8}  direction="row" alignItems="center">
+            </Stack>    
+                 <Grid item xs={8}  direction={ 'row' } spacing={2}>
                     <swiper-container speed="500"  ref={swiperRef} init="false">            
                           { films1.map((film, index) => (filterFilm(index, {...film})))}           
                     </swiper-container>   
                 </Grid> 
-            </Box>                   
             </>
         );
 
@@ -95,12 +91,9 @@ export const CardsSortedByFilter = (props) => {
 
     return (
         <>
-
-        {/* <Grid container spacing={1}  sx={{mt: 3}} direction={{xs: 'column', md: 'row'}} alignItems="center" > */}
-        <Grid container spacing={1}  sx={{mt: 3}} direction="row" alignItems="center" >
+        <Grid container spacing={1}  sx={{mt: 3}} >
           { films1.length !== 0  ?    Boxz  : filmsNotFound } 
         </Grid>  
-
         </>
       );
 };

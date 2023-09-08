@@ -22,6 +22,7 @@ export const BoxHero = () => {
             const swiperContainer = swiperRef.current;
             const params = {
               navigation: true,
+             
             //   pagination: true,
               injectStyles: [                `
                   .swiper-button-next,
@@ -33,12 +34,18 @@ export const BoxHero = () => {
         
                   .swiper-button-prev {
                     margin-left: -15px;
+
                   }
-        
+                     
                   .swiper-button-next {
                     margin-right: -15px;
                   }                 
-                
+                @media (max-width: 768px) {                   
+                  .swiper-button-next,
+                  .swiper-button-prev {
+                    display:  none;
+                  }     
+                  }  
               `,
               ],
             };
