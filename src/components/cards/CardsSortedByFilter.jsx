@@ -63,6 +63,13 @@ export const CardsSortedByFilter = (props) => {
                 .swiper-button-next {
                     margin-right: 10px;
                 }                 
+
+                @media (max-width: 600px) {                   
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                      display:  none;
+                    }     
+                    }  
                 
             `,
             ],

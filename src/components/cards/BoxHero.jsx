@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Stack } from '@mui/material';
 // import Swiper from 'swiper';
 import { register } from 'swiper/element/bundle';
 
@@ -55,11 +55,15 @@ export const BoxHero = () => {
           }, []);
 
   // =========================================================================
-    
+  const stlStack = {   
+    marginBottom: { xs: 'calc(10% - 250px)', sm: 'calc(8% - 100px)',  md: '0' },
+    // marginBottom: { xs: '-250px', sm: '-150px', md: '0' },
+  }; 
 
     return (
         <>     
-             <Grid container spacing={2}  sx={{mt: 3}} direction="row" alignItems="center" > 
+             <Stack sx={stlStack}>
+              <Grid container spacing={2}  sx={{mt: 3}} direction="row" alignItems="center" > 
                 <Grid item xs={12}>                   
                     <swiper-container slides-per-view="1" 
                                       speed="500" 
@@ -81,7 +85,9 @@ export const BoxHero = () => {
                           ))}
                     </swiper-container>        
                 </Grid>    
-             </Grid>     
+             </Grid>
+             </Stack> 
+                  
 
          
         </>
